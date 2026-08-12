@@ -19,6 +19,7 @@ WORKDIR /src
 
 # restore dependencies
 COPY go.mod go.sum ./
+ENV GODEBUG=tlsmlkem=0
 RUN go mod download
 COPY . .
 
